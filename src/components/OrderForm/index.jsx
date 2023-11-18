@@ -18,6 +18,21 @@ export const OrderForm = () => {
       : dayjs(dateTo).diff(dayjs(dateFrom), 'day');
 
   console.log(night);
+  console.log(food);
+
+  const handleClick = (e) => {
+    if (e.target.value === 'Snídaně') {
+      setFood(150);
+    } else if (e.target.value === 'Polopenze') {
+      setFood(300);
+    } else if (e.target.value === 'Plná penze') {
+      setFood(500);
+    } else {
+      setFood(0);
+    }
+  };
+
+
   return (
     <form>
       <div className="form-fields">
@@ -53,7 +68,7 @@ export const OrderForm = () => {
         <label htmlFor="select" className="field-label">
           Stravování:
         </label>
-        <select id="select" className="field-input">
+        <select id="select" className="field-input" onChange={handleClick}>
           <option>vyberte</option>
           <option>Snídaně</option>
           <option>Polopenze</option>
