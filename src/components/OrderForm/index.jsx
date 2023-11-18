@@ -9,9 +9,7 @@ export const OrderForm = () => {
   const [pet, setPet] = useState(0);
   const [food, setFood] = useState(0);
 
-
-
-console.log(person)
+  console.log(person);
 
   return (
     <form>
@@ -23,11 +21,11 @@ console.log(person)
         <label htmlFor="dateTo" className="field-label">
           Do:
         </label>
-        <input id="dateTo" className="field-input" type="date"/>
-        <label htmlFor="howManyPersons" className="field-label" >
+        <input id="dateTo" className="field-input" type="date" />
+        <label htmlFor="howManyPersons" className="field-label">
           Počet osob:
         </label>
-        <input id="person" className="field-input" type="text"  onChange={(e)=>{setPerson(e.target.value)}}/>
+        <input id="person" className="field-input" type="text" />
         <label htmlFor="select" className="field-label">
           Stravování:
         </label>
