@@ -1,7 +1,7 @@
 import './style.css';
 import { OrderForm } from '../OrderForm';
 
-export const ChosenRoom = () => {
+export const Order = () => {
   return (
     <section className="light">
       <div className="container">

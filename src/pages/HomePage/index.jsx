@@ -1,4 +1,4 @@
-import { ChosenRoom } from '../../components/ChosenRoom';
+import { Order } from '../../components/Order';
 import { Footer } from '../../components/Footer';
 import { Banner } from '../../components/Banner';
 import { Rooms } from '../../components/Rooms';
@@ -9,7 +9,7 @@ export const HomePage = () => {
     <>
       <Banner />
       <Rooms />
-      <ChosenRoom />
+      <Order />
       <Footer />
     </>
   );
