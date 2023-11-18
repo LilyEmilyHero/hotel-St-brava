@@ -17,16 +17,20 @@ export const ChosenRoom = () => {
           </div>
           <form>
             <div className="form-fields">
-              <label htmlFor="field1" className="field-label">
-                Field 1:
+              <label htmlFor="dateFrom" className="field-label">
+                Od:
               </label>
-              <input id="field1" className="field-input" type="text" />
+              <input id="dateFrom" className="field-input" type="date" />
 
-              <label htmlFor="field2" className="field-label">
-                Field 2:
+              <label htmlFor="dateTo" className="field-label">
+                Do:
               </label>
-              <input id="field2" className="field-input" type="text" />
 
+              <input id="howManyPersons" className="field-input" type="date" />
+              <label htmlFor="howManyPersons" className="field-label">
+                Počet osob:
+              </label>
+              <input id="dateTo" className="field-input" type="text" />
               <label htmlFor="select" className="field-label">
                 Select:
               </label>
