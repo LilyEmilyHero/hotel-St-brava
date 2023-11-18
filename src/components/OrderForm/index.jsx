@@ -1,4 +1,6 @@
-export const OrderForm = () => {
+import { useState } from 'react';
+
+export const OrderForm = ({ price }) => {
   return (
     <form>
       <div className="form-fields">
@@ -45,7 +47,7 @@ export const OrderForm = () => {
         </label>
         <input id="dateTo" className="field-input" type="tel" />
       </div>
-      <p>Celková cena za pobyt: Kč</p>
+      <p>Celková cena za pobyt: {price} Kč</p>
       <button className="wide">Odeslat poptávku</button>
     </form>
   );

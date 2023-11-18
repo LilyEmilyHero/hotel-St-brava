@@ -1,22 +1,21 @@
 import './style.css';
 import { OrderForm } from '../OrderForm';
+import { useState } from 'react';
 
-export const Order = ({selectRoom}) => {
+export const Order = ({ selectRoom }) => {
+  const [price, setPrice] = useState(0);
   return (
     <section className="light">
       <div className="container">
-        <h2>{selectRoom.name}</h2>
+        <h2>
+          {selectRoom.name}, {selectRoom.pricePerPersone} na osobu za noc
+        </h2>
         <div className="columns-2">
           <div className="column">
-            <img src="img/image1.svg" />
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque
-              accusantium, dolor quisquam doloremque quod nobis temporibus
-              ducimus sapiente consectetur distinctio assumenda, nisi suscipit
-              saepe. Vero.
-            </p>
+            <img src={selectRoom.img} />
+            <p>{selectRoom.description}</p>
           </div>
-          <OrderForm />
+          <OrderForm price={price} />
         </div>
       </div>
     </section>
