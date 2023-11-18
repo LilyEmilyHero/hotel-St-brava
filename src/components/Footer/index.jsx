@@ -6,12 +6,15 @@ export const Footer = () => {
       <div className="container columns-2">
         <div className="columns">
           <h2>Kontakt</h2>
-          <p className='footer_adress'>Hotel Stříbrava</p>
-          <p className='footer_adress'>Ke Kamenné lávce 12</p>
-          <p className='footer_adress'>317 24  Libnice nad Stříbravou</p>
-          <a className='footer_email' href="mailto:recepce@hotelstribrava.cz">recepce@hotelstribrava.cz</a>
+          <p className="footer_adress">Hotel Stříbrava</p>
+          <p className="footer_adress">Ke Kamenné lávce 12</p>
+          <p className="footer_adress">317 24 Libnice nad Stříbravou</p>
+          <div className="footer_email" >
+          <a href="mailto:recepce@hotelstribrava.cz">
+            recepce@hotelstribrava.cz
+          </a></div>
         </div>
-        <img src="./img/mapa.png" alt="mapa"/>
+        <img src="./img/mapa.png" alt="mapa" />
       </div>
     </section>
   );

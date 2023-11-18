@@ -50,7 +50,7 @@ export const Rooms = () => {
 
   useEffect(() => {
     const fetchRooms = async () => {
-      const response = await fetch('http://localhost:4001/api/rooms');
+      const response = await fetch('http://localhost:4000/api/rooms');
       const data = await response.json();
       setRooms(data.result);
     };
