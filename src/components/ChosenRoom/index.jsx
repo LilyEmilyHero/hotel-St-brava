@@ -4,7 +4,7 @@ export const ChosenRoom = () => {
   return (
     <section className="light">
       <div className="container">
-        <h2>Heading</h2>
+        <h2>Pokoj typ</h2>
         <div className="columns-2">
           <div className="column">
             <img src="img/image1.svg" />
