@@ -37,6 +37,10 @@ export const OrderForm = ({ selectRoom }) => {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <form>
       <div className="form-fields">
@@ -116,7 +120,9 @@ export const OrderForm = ({ selectRoom }) => {
         <input id="dateTo" className="field-input" type="tel" />
       </div>
       <p>Celková cena za pobyt: {totalPrice} Kč</p>
-      <button className="wide">Odeslat poptávku</button>
+      <button className="wide" onClick={handleSubmit}>
+        Odeslat poptávku
+      </button>
     </form>
   );
 };
