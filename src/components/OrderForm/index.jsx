@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import dayjs from 'dayjs';
 
-export const OrderForm = () => {
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [roomsPrice, setRoomPrice] = useState(0);
+export const OrderForm = ({ selectRoom }) => {
   const [dateFrom, setDateFrom] = useState(null);
   const [dateTo, setDateTo] = useState(null);
   const [person, setPerson] = useState(0);
@@ -16,6 +14,13 @@ export const OrderForm = () => {
     (dateTo || dateFrom) === null
       ? 0
       : dayjs(dateTo).diff(dayjs(dateFrom), 'day');
+
+  const roomPrice = selectRoom.pricePerPersone * night * person;
+  const foodPrice = food * night * person;
+  const childPrice = (child ? 1 : 0) * selectRoom.pricePerPersone * 0.5;
+  const petPrice = (pet ? 1 : 0) * selectRoom.pricePerPersone * 0.25;
+  const totalPriceControl = roomPrice + foodPrice + childPrice + petPrice;
+  const totalPrice = totalPriceControl > 0 ? totalPriceControl : 0;
 
   console.log(night);
   console.log(food);
@@ -31,7 +36,6 @@ export const OrderForm = () => {
       setFood(0);
     }
   };
-
 
   return (
     <form>
@@ -111,7 +115,7 @@ export const OrderForm = () => {
         </label>
         <input id="dateTo" className="field-input" type="tel" />
       </div>
-      <p>Celková cena za pobyt: {person} Kč</p>
+      <p>Celková cena za pobyt: {totalPrice} Kč</p>
       <button className="wide">Odeslat poptávku</button>
     </form>
   );
