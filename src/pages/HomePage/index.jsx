@@ -1,46 +1,12 @@
+import { Header } from '../../components/Header';
+import { Rooms } from '../../components/Rooms';
 import './style.css';
 
 export const HomePage = () => {
   return (
     <>
-      <div class="banner">
-        <div class="banner__stripe">
-          <div class="container">
-            <h1>Template</h1>
-            <p class="lead">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
-              sequi.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <section class="dark">
-        <div class="container">
-          <h2>Heading</h2>
-          <p>Quas odio quidem, enim nihil unde quia temporibus vitae in ab.</p>
-          <div class="cards-row">
-            <div class="card">
-              <img class="card__image" src="./pages/HomePage/img/image.svg" />
-              <div class="card__title">Card 1</div>
-              <div class="card__body">Sunt natus</div>
-            </div>
-
-            <div class="card">
-              <img class="card__image" src="./img/image1.svg" />
-              <div class="card__title">Card 2</div>
-              <div class="card__body">Laboriosam</div>
-            </div>
-
-            <div class="card">
-              <img class="card__image" src="img/image1.svg" />
-              <div class="card__title">Card 3</div>
-              <div class="card__body">Eveniet officiis</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <Header />
+      <Rooms />
       <section class="light">
         <div class="container">
           <h2>Heading</h2>
