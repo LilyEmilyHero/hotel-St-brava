@@ -1,14 +1,20 @@
 import { useState } from 'react';
+import dayjs from 'dayjs';
 
 export const OrderForm = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [roomsPrice, setRoomPrice] = useState(0);
-  const [night, setNight] = useState(0);
+  const [dateFrom, setDateFrom] = useState('2010-01-01');
+  const [dateTo, setDateTo] = useState('2010-01-02');
+  const [night, setNight] = useState(dateFrom.diff(dateTo, 'day'));
   const [person, setPerson] = useState(0);
   const [child, setChild] = useState(false);
   const [pet, setPet] = useState(false);
   const [invalid, setInvalid] = useState(false);
   const [food, setFood] = useState(0);
+
+  console.log(dayjs(dateFrom));
+  console.log(dayjs(dateTo));
 
   return (
     <form>
@@ -16,11 +22,21 @@ export const OrderForm = () => {
         <label htmlFor="dateFrom" className="field-label">
           Od:
         </label>
-        <input id="dateFrom" className="field-input" type="date" />
+        <input
+          id="dateFrom"
+          className="field-input"
+          type="date"
+          onChange={(e) => setDateFrom(e.target.value)}
+        />
         <label htmlFor="dateTo" className="field-label">
           Do:
         </label>
-        <input id="dateTo" className="field-input" type="date" />
+        <input
+          id="dateTo"
+          className="field-input"
+          type="date"
+          onChange={(e) => setDateTo(e.target.value)}
+        />
         <label htmlFor="howManyPersons" className="field-label">
           Počet osob:
         </label>
