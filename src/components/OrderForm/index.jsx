@@ -1,6 +1,18 @@
 import { useState } from 'react';
 
-export const OrderForm = ({ price }) => {
+export const OrderForm = () => {
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [roomsPrice, setRoomPrice] = useState(0);
+  const [night, setNight] = useState(0);
+  const [person, setPerson] = useState(0);
+  const [child, setChild] = useState(0);
+  const [pet, setPet] = useState(0);
+  const [food, setFood] = useState(0);
+
+
+
+console.log(person)
+
   return (
     <form>
       <div className="form-fields">
@@ -11,11 +23,11 @@ export const OrderForm = ({ price }) => {
         <label htmlFor="dateTo" className="field-label">
           Do:
         </label>
-        <input id="howManyPersons" className="field-input" type="date" />
-        <label htmlFor="howManyPersons" className="field-label">
+        <input id="dateTo" className="field-input" type="date"/>
+        <label htmlFor="howManyPersons" className="field-label" >
           Počet osob:
         </label>
-        <input id="dateTo" className="field-input" type="text" />
+        <input id="person" className="field-input" type="text"  onChange={(e)=>{setPerson(e.target.value)}}/>
         <label htmlFor="select" className="field-label">
           Stravování:
         </label>
@@ -47,7 +59,7 @@ export const OrderForm = ({ price }) => {
         </label>
         <input id="dateTo" className="field-input" type="tel" />
       </div>
-      <p>Celková cena za pobyt: {price} Kč</p>
+      <p>Celková cena za pobyt: {person} Kč</p>
       <button className="wide">Odeslat poptávku</button>
     </form>
   );

@@ -3,7 +3,8 @@ import { OrderForm } from '../OrderForm';
 import { useState } from 'react';
 
 export const Order = ({ selectRoom }) => {
-  const [price, setPrice] = useState(0);
+
+
   return (
     <section className="light">
       <div className="container">
@@ -15,7 +16,7 @@ export const Order = ({ selectRoom }) => {
             <img src={selectRoom.img} />
             <p>{selectRoom.description}</p>
           </div>
-          <OrderForm price={price} />
+          <OrderForm />
         </div>
       </div>
     </section>
