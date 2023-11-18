@@ -8,7 +8,7 @@ export const Order = ({ selectRoom }) => {
     <section className="light">
       <div className="container">
         <h2>
-          {selectRoom.name}, {selectRoom.pricePerPersone} na osobu za noc
+          Pokoj {selectRoom.name}, {selectRoom.pricePerPersone} Kč na osobu za noc
         </h2>
         <div className="columns-2">
           <div className="column">
