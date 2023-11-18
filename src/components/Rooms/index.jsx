@@ -1,6 +1,7 @@
 import { Room } from '../Room';
+import { useState, useEffect } from 'react';
 import './style.css';
-
+/*
 const roomsTypes = [
   {
     id: 0,
@@ -43,15 +44,39 @@ const roomsTypes = [
       'Pro nejnáročnější hosty máme připravený prostorný pokoj s exkluzivním vybavením v prvorepublikovém stylu. Tento pokoj má nejlepší výhled na řeku Stříbravu i na okolní krajinu. Tento pokoj skvělou volbou pro ty, kteří hledají vrcholný komfort a luxusní zážitek během svého pobytu v našem zrekonstruovaném hotelu.',
   },
 ];
+*/
+export const Rooms = () => {
+  const [rooms, setRooms] = useState(null);
 
-export const Rooms = (roomType) => {
+  useEffect(() => {
+    const fetchRooms = async () => {
+      const response = await fetch('http://localhost:4001/api/rooms');
+      const data = await response.json();
+      setRooms(data.result);
+    };
+
+    fetchRooms();
+  }, []);
+
+  if (rooms === null) {
+    return (
+      <section className="dark">
+        <div className="container">
+          <h2>Naše pokoje</h2>
+          <p>Loading...</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="dark">
       <div className="container">
-        <h2>Heading</h2>
-        <p>Quas odio quidem, enim nihil unde quia temporibus vitae in ab.</p>
+        <h2>Naše pokoje</h2>
+        <p>Vyberte si, který z našich pokojů je pro vás ten pravý.</p>
+
         <div class="cards-row">
-          {roomsTypes.map((roomType) => (
+          {rooms.map((roomType) => (
             <Room roomsTypes={roomType} key={roomType.id} />
           ))}
 
