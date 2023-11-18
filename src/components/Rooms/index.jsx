@@ -1,19 +1,9 @@
 import { Room } from '../Room';
-import { useState, useEffect } from 'react';
+
 import './style.css';
 
-export const Rooms = () => {
-  const [rooms, setRooms] = useState(null);
-
-  useEffect(() => {
-    const fetchRooms = async () => {
-      const response = await fetch('http://localhost:4000/api/rooms');
-      const data = await response.json();
-      setRooms(data.result);
-    };
-
-    fetchRooms();
-  }, []);
+export const Rooms = ({rooms, onClick}) => {
+  
 
   if (rooms === null) {
     return (
@@ -34,7 +24,7 @@ export const Rooms = () => {
 
         <div className="cards-row">
           {rooms.map((roomType) => (
-            <Room roomsTypes={roomType} key={roomType.id} />
+            <Room onClick={onClick} roomsTypes={roomType} key={roomType.id} />
           ))}
         </div>
       </div>
